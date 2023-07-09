@@ -7,36 +7,31 @@
 <button onclick="sendMessage()">Send message</button>
 
 <script>
-function sendMessage() {
+async function sendMessage() {
   const message = 'Hello from my computer!!!';
 
   const options = {
-    hostname: '192.168.1.242',
-    port: 3000,
-    path: '/',
     method: 'POST',
     headers: {
       'Content-Type': 'text/plain',
-      'Content-Length': message.length
+    },
+    body: message,
+  };
+
+  try {
+    const response = await fetch('http://192.168.1.242:3000/', options);
+    
+    if (!response.ok) {
+      throw new Error('HTTP error ' + response.status);
     }
-  };
-
-  const req = new XMLHttpRequest();
-  req.open(options.method, `http://${options.hostname}:${options.port}${options.path}`);
-  req.setRequestHeader('Content-Type', options.headers['Content-Type']);
-  req.setRequestHeader('Content-Length', options.headers['Content-Length']);
-  
-  req.onload = function() {
-    // Process the response
-    console.log('Response:', req.responseText);
-  };
-
-  req.onerror = function(error) {
+    
+    const data = await response.text();
+    console.log('Response:', data);
+  } catch (error) {
     console.error('Error:', error);
-  };
-
-  req.send(message);
+  }
 }
+
 </script>
 </body>
 </html>
