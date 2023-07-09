@@ -7,8 +7,8 @@
 <button onclick="sendMessage()">Send message</button>
 
 <script>
-function sendMessage() {
-  const message = 'Hello from my computer!!!!!!';
+async function sendMessage() {
+  const message = 'Hello from my computer!!!';
 
   const options = {
     method: 'POST',
@@ -18,19 +18,18 @@ function sendMessage() {
     body: message,
   };
 
-  fetch('http://192.168.1.242:3000/', options)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('HTTP error ' + response.status);
-      }
-      return response.text();
-    })
-    .then(data => {
-      console.log('Response:', data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+  try {
+    const response = await fetch('http://192.168.1.242:3000/', options);
+    
+    if (!response.ok) {
+      throw new Error('HTTP error ' + response.status);
+    }
+    
+    const data = await response.text();
+    console.log('Response:', data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
 
 </script>
