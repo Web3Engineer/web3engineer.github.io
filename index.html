@@ -3,63 +3,34 @@
 <head>
 </head>
 <body>
-  
-<button onclick="sendMessage()" ontouchstart="sendMessage()">send message</button>
+  <button onclick="sendMessage()">Send Message</button>
 
-<script>
-function sendMessage() {
-  const message = 'Hello from my computer!!!';
+  <script>
+    function sendMessage() {
+      const message = 'Hello from my computer!!!';
 
-  const options = {
-    hostname: '192.168.1.204',
-    port: 3000,
-    path: '/',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'text/plain',
-      'Content-Length': message.length
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+        body: message,
+      };
+
+      fetch('http://192.168.1.204:3000/', options)  // Replace with your server's IP address or domain
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('HTTP error ' + response.status);
+          }
+          return response.text();
+        })
+        .then(data => {
+          console.log('Response:', data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     }
-  };
-
-  const req = new XMLHttpRequest();
-  req.open(options.method, `http://${options.hostname}:${options.port}${options.path}`);
-  req.setRequestHeader('Content-Type', options.headers['Content-Type']);
-  req.setRequestHeader('Content-Length', options.headers['Content-Length']);
-  
-  req.onload = function() {
-    // Process the response
-    console.log('Response:', req.responseText);
-  };
-
-  req.onerror = function(error) {
-    console.error('Error:', error);
-  };
-
-  req.send(message);
-}
-</script>
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCEHaEapbR4vrhL0Apl4-9QIjqW8PuVsB4",
-    authDomain: "propane-service-313305.firebaseapp.com",
-    projectId: "propane-service-313305",
-    storageBucket: "propane-service-313305.appspot.com",
-    messagingSenderId: "1002149904009",
-    appId: "1:1002149904009:web:ced68f8eaf44e2f1b89058",
-    measurementId: "G-Z7LS9Y5P59"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+  </script>
 </body>
 </html>
