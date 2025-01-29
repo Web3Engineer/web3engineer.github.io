@@ -16,7 +16,7 @@
 - Advanced JavaScript Implementations<br><br><br>
 🛰️ How to Contact Me:<br>
 - web3Engineer@proton.me<br><br>
-🌐 My websites:<br>
+🌐 My created websites:<br>
 - https://Daniel.engineer<br>
 - https://BiblePortal.net<br>
 - https://FernBeach.tech<br>
