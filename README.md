@@ -18,7 +18,7 @@
 - web3Engineer@proton.me<br><br>
 🌐 My personal website:<br>
 - https://Daniel.engineer<br>
-🌐 Websites i created for mt clients:<br>
+🌐 Web Apps & sites i created for my clients:<br>
 - https://BiblePortal.net<br>
 - https://FernBeach.tech<br>
 - https://SandersLeadSolutions.com
