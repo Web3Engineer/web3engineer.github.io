@@ -13,7 +13,7 @@
 - Artificially Inteligent Task Models/APIs
 - Decentralized Applications
 - Solidity Programming Language
-- Advanced JavaScript Implementations<br><br><br>
+- Advanced JavaScript Implementations<br><br>
 🛰️ How to Contact Me:<br>
 - web3Engineer@proton.me<br><br>
 🌐 My personal website:<br>
