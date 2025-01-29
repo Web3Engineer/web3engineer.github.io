@@ -19,3 +19,4 @@
 🌐 My websites:<br>
 - https://Daniel.engineer<br>
 - https://BiblePortal.net<br>
+- https://FernBeach.tech<br>
