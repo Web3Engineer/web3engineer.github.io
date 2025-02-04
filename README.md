@@ -16,9 +16,9 @@
 - Advanced JavaScript Implementations<br><br>
 🛰️ How to Contact Me:<br>
 - web3Engineer@proton.me<br><br>
-🌐 My personal website:<br>
+🌐 Personal website:<br>
 - https://Daniel.engineer<br>
-🌐 Web Apps & sites i created for my clients:<br>
+🌐 Web Apps & sites created for my clients:<br>
 - https://BiblePortal.net<br>
 - https://FernBeach.tech<br>
 - https://SandersLeadSolutions.com
